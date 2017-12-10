@@ -1,10 +1,13 @@
-#!/usr/bin/env python
-import os
-import sys
+# coding:utf-8
+from flask_script import Manager
+from flask_migrate import Migrate, MigrateCommand
+from app import create_app, db
 
-if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "qtfy.settings")
+app = create_app("development")
+manage = Manager(app)
 
-    from django.core.management import execute_from_command_line
+migragt = Migrate(app, db)
+manage.add_command("db", MigrateCommand)
 
-    execute_from_command_line(sys.argv)
+if __name__ == '__main__':
+    manage.run()
