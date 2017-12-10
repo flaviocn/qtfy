@@ -1082,7 +1082,7 @@ if (typeof Object.create !== "function") {
                 direction;
             if (base.newRelativeX < 0) {
                 direction = "right";
-                base.playDirection = "next";
+                base.playDirection = "sh";
             } else {
                 direction = "left";
                 base.playDirection = "prev";
@@ -1473,7 +1473,7 @@ if (typeof Object.create !== "function") {
         stopOnHover : false,
 
         navigation : false,
-        navigationText : ["prev", "next"],
+        navigationText : ["上一个", "下一个"],
         rewindNav : true,
         scrollPerPage : false,
 
