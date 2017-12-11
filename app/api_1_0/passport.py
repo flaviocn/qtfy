@@ -1,21 +1,54 @@
 # coding:utf-8
 import logging
 import re
+
+from flask.testsuite.config import SECRET_KEY
+
 from app import redis_store, db
 from app.constants import LOGIN_ERROR_MAX_NUM, LOGIN_ERROR_FORBID_TIME
 from app.models import User
 from app.response_code import RET
+from app.utils.send_email import send_email_thread
 from . import api
 from flask import request, jsonify, session
 from app.utils.commons import login_required
 from flask_restful import Resource, Api
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 api = Api(api)
 
 class Register(Resource):
+    def get(self):
+        username = request.args.get("username")
+
+        if username:
+            try:
+                user = User.query.filter_by(username=username).first()
+            except Exception as e:
+                logging.error(e)
+                resp_dict = {
+                    'errno': RET.PARAMERR,
+                    'errmsg': '参数错误'
+                }
+                return jsonify(resp_dict)
+
+            if user:
+                resp_dict = {
+                    'errno': RET.DATAEXIST,
+                    'errmsg': '用户名已存在'
+                }
+                return jsonify(resp_dict)
+
+        resp_dict = {
+            'errno': RET.OK,
+            'errmsg': '可以注册'
+        }
+        return jsonify(resp_dict)
+
     def post(self):
         # 用户名  电子邮箱  密码
-        resp_dict = request.get_json()
+        # resp_dict = request.get_json()
+        resp_dict = request.args
         username = resp_dict.get("username")
         email = resp_dict.get("email")
         password = resp_dict.get("password")
@@ -34,7 +67,7 @@ class Register(Resource):
             }
             return jsonify(resp_dict)
 
-        user = User(name=username, email=email)
+        user = User(username=username, email=email)
         user.password = password
 
         try:
@@ -49,6 +82,12 @@ class Register(Resource):
             }
             return jsonify(resp_dict)
 
+        token = user.generate_active_token()
+
+        url = "http://127.0.0.1:5000/api/v1_0/state?token=%s" % token
+        content = u"<h3>点击链接激活您的账号：</h3><a href='%s'>%s</a>" %(url, url)
+        send_email_thread('（且听风吟）账号激活', to=email, content=content)
+
         session['id'] = user.id
         session['username'] = username
         session['email'] = email
@@ -60,6 +99,42 @@ class Register(Resource):
         return jsonify(resp_dict)
 
 api.add_resource(Register, '/users')
+
+class Activate(Resource):
+    def get(self):
+        # 解析口令token，获取用户身份
+        # 构建序列化器
+        token = request.args.get("token")
+        s = Serializer(SECRET_KEY)
+
+        try:
+            data = s.loads(token)
+        except Exception as e:
+            logging.error(e)
+            return "链接失效"
+
+        user_id = data.get("confirm")
+
+        # 用户激活
+        try:
+            User.query.filter_by(id=user_id).update({"is_activate": True})
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            logging.error(e)
+            resp_dict = {
+                'errno': RET.SERVERERR,
+                'errmsg': '激活失败'
+            }
+            return jsonify(resp_dict)
+
+        resp_dict = {
+            'errno': RET.OK,
+            'errmsg': '激活成功'
+        }
+        return jsonify(resp_dict)
+
+api.add_resource(Activate, '/state')
 
 # @api.route("/users", methods=["POST"])
 # def register():
