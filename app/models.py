@@ -24,8 +24,7 @@ class User(BaseModel, db.Model):
     id = db.Column(db.Integer, primary_key=True)  # 用户编号
     username = db.Column(db.String(32), unique=True, nullable=False)  # 用户名
     password_hash = db.Column(db.String(128), nullable=False)  # 加密的密码
-    # email = db.Column(db.String(64), unique=True, nullable=False)  # 电子邮箱
-    email = db.Column(db.String(64), nullable=False)  # 电子邮箱
+    email = db.Column(db.String(64), unique=True, nullable=False)  # 电子邮箱
     is_activate = db.Column(db.Boolean, default=False)  # 是否激活
 
     def generate_active_token(self):

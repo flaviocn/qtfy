@@ -10,9 +10,19 @@ function getCookie(name) {
 
 $(document).ready(function() {
 
-    $("#r_username").blur(function () {
+    $("#r_username").change(function () {
         var username = $("#r_username").val();
-        $.get("/api/v1_0/users",{"username":username} , function (resp) {
+        var email = $("#r_email").val();
+        $.get("/api/v1_0/users",{"username":username, "email": email} , function (resp) {
+            if (resp.errno != 0) {
+                alert(resp.errmsg);
+            }
+        })
+    })
+    $("#r_email").change(function () {
+        var username = $("#r_username").val();
+        var email = $("#r_email").val();
+        $.get("/api/v1_0/users",{"username":username, "email": email} , function (resp) {
             if (resp.errno != 0) {
                 alert(resp.errmsg);
             }

@@ -29,12 +29,6 @@ class Config(object):
     MAIL_USERNAME = "flaviocn@163.com"
     MAIL_PASSWORD = "xywflm962464"
     MAIL_DEFAULT_SENDER = 'Flavio<flaviocn@163.com>'
-    # current_app.config['MAIL_SERVER'] = "smtp.163.com"
-    # current_app.config['MAIL_PORT'] = 465
-    # current_app.config['MAIL_USE_SSL'] = True
-    # current_app.config['MAIL_USERNAME'] = "flaviocn@163.com"
-    # current_app.config['MAIL_PASSWORD'] = "xywflm962464"
-    # current_app.config['MAIL_DEFAULT_SENDER'] = 'Flavio<flaviocn@163.com>'
 
 class DevelopmentConfig(Config):
     DEBUG = True
