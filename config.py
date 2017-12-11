@@ -22,6 +22,20 @@ class Config(object):
     SESSION_USE_SIGNER = True # 对数据进行签名加密, 提高安全性
     SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT) # 设置redis的ip和端口
 
+    # 配置邮件：服务器／端口／安全套接字层／邮箱名／授权码
+    MAIL_SERVER = "smtp.163.com"
+    MAIL_PORT = 465
+    MAIL_USE_SSL = True
+    MAIL_USERNAME = "flaviocn@163.com"
+    MAIL_PASSWORD = "xywflm962464"
+    MAIL_DEFAULT_SENDER = 'Flavio<flaviocn@163.com>'
+    # current_app.config['MAIL_SERVER'] = "smtp.163.com"
+    # current_app.config['MAIL_PORT'] = 465
+    # current_app.config['MAIL_USE_SSL'] = True
+    # current_app.config['MAIL_USERNAME'] = "flaviocn@163.com"
+    # current_app.config['MAIL_PASSWORD'] = "xywflm962464"
+    # current_app.config['MAIL_DEFAULT_SENDER'] = 'Flavio<flaviocn@163.com>'
+
 class DevelopmentConfig(Config):
     DEBUG = True
 

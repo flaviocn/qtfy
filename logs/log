@@ -11,3 +11,58 @@ WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:46 (_mysql_exceptions.OperationalError) (1054, "Unknown column 'username' in 'field list'") [SQL: u'INSERT INTO users (create_time, update_time, username, password_hash, email, is_activate) VALUES (%s, %s, %s, %s, %s, %s)'] [parameters: (datetime.datetime(2017, 12, 11, 14, 40, 21, 427615), datetime.datetime(2017, 12, 11, 14, 40, 21, 427625), '123', 'pbkdf2:sha256:50000$dVFBPJtm$a7e073e313a3ee7901028f268d8b7752f3e9e8460eb0a9d4caeed8851285e6d8', '123@163.com', 0)]
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:80 Signature 'i1BvxXmq_d-XuVbGPBAGasvTbf8PeZYf5kQwMLhjrq8' does not match
+ERROR passport.py:80 Signature 'i1BvxXmq_d-XuVbGPBAGasvTbf8PeZYf5kQwMLhjrq8' does not match
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:82 Signature 'i1BvxXmq_d-XuVbGPBAGasvTbf8PeZYf5kQwMLhjrq8' does not match
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:80 Signature '4b3y9uv9D3b4BijdR88xFVWFksOWvKEWKDTN8IaSAaQ' does not match
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:98 Class 'flask_sqlalchemy.BaseQuery' is not mapped
+ERROR passport.py:98 Class 'flask_sqlalchemy.BaseQuery' is not mapped
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:100 Class 'flask_sqlalchemy.BaseQuery' is not mapped
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:83 Signature '5w34BB0b6v1lCtatV0w-pRlSljRCAp5hHYui0KFfyD0' does not match
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:50 (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '12345678@163.com' for key 'email'") [SQL: u'INSERT INTO users (create_time, update_time, username, password_hash, email, is_activate) VALUES (%s, %s, %s, %s, %s, %s)'] [parameters: (datetime.datetime(2017, 12, 11, 15, 38, 52, 39993), datetime.datetime(2017, 12, 11, 15, 38, 52, 40008), '12345678', 'pbkdf2:sha256:50000$UkVhO8cG$a42d67b45b43e7e02d5da2fe476a79c79514e1b44f9540620e76d2ab7144dd00', '12345678@163.com', 0)]
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:78 (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry '1234512' for key 'username'") [SQL: u'INSERT INTO users (create_time, update_time, username, password_hash, email, is_activate) VALUES (%s, %s, %s, %s, %s, %s)'] [parameters: (datetime.datetime(2017, 12, 11, 16, 31, 11, 753082), datetime.datetime(2017, 12, 11, 16, 31, 11, 753092), '1234512', 'pbkdf2:sha256:50000$AmM5Uqc1$34d151de71e90bb27399f2aa086167a93389d0682c6de41a224d5cac13fcda8f', 'youthzhulingyun@163.com', 0)]
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!

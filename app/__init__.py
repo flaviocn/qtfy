@@ -8,10 +8,13 @@ import redis
 import logging
 from logging.handlers import RotatingFileHandler
 from app.utils.commons import RegexConverter
+from flask_mail import Mail
 
 db = SQLAlchemy()
 
 csrf = CSRFProtect()
+
+mail = Mail()
 
 redis_store = None
 
@@ -38,7 +41,9 @@ def create_app(config_name):
 
     db.init_app(app)
 
-    csrf.init_app(app)
+    # csrf.init_app(app)
+
+    mail.init_app(app)
 
     global redis_store
     redis_store = redis.StrictRedis(config.REDIS_HOST, config.REDIS_PORT)

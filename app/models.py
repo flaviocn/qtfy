@@ -1,8 +1,12 @@
 # -*- coding:utf-8 -*-
 
 from datetime import datetime
+
+from flask.testsuite.config import SECRET_KEY
+
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 
 class BaseModel(object):
@@ -18,9 +22,17 @@ class User(BaseModel, db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)  # 用户编号
-    name = db.Column(db.String(32), unique=True, nullable=False)  # 用户名
+    username = db.Column(db.String(32), unique=True, nullable=False)  # 用户名
     password_hash = db.Column(db.String(128), nullable=False)  # 加密的密码
-    email = db.Column(db.String(64), unique=True, nullable=False)  # 电子邮箱
+    # email = db.Column(db.String(64), unique=True, nullable=False)  # 电子邮箱
+    email = db.Column(db.String(64), nullable=False)  # 电子邮箱
+    is_activate = db.Column(db.Boolean, default=False)  # 是否激活
+
+    def generate_active_token(self):
+        """生成激活令牌"""
+        serializer = Serializer(SECRET_KEY, 3600)
+        token = serializer.dumps({"confirm": self.id})  # 返回bytes类型
+        return token.decode()
 
     @property
     def password(self):
