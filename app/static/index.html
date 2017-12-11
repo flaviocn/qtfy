@@ -161,27 +161,29 @@
 <!--/banner-bottom-->
 <div class="w3_agilits_banner_bootm">
     <div class="w3_agilits_inner_bottom">
-        <div class="col-md-6 wthree_agile_login">
+        <div id="not_login" class="col-md-6 wthree_agile_login" style="display: block;">
             <ul>
                 <li><i class="fa fa-envelope" aria-hidden="true"></i> flaviocn@163.cn</li>
                 <li><a href="#" class="login" data-toggle="modal" data-target="#myModal4">登录</a></li>
                 <li><a href="#" class="login reg" data-toggle="modal" data-target="#myModal5">注册</a></li>
-
             </ul>
         </div>
-        <div class="col-md-6 wthree_share_agile">
-
-            <div class="single-agile-shar-buttons">
-                <ul>
-                    <li>
-                        <!-- Place this tag where you want the +1 button to render. -->
-                        <div class="g-plusone" data-size="medium"></div>
-
-                        <!-- Place this tag after the last +1 button tag. -->
-                    </li>
-                </ul>
-            </div>
+        <!--style="display: block;"-->
+        <div id="has_login" class="col-md-6 wthree_agile_login" style="display: block;">
+            <ul>
+                <a href=""><li id="username"></li></a>
+                <li><i class="fa" aria-hidden="true"></i> </li>
+                <li><i class="fa" aria-hidden="true"></i> </li>
+                <li><i class="fa" aria-hidden="true"></i> </li>
+                <a href=""><li id="email"></li></a>
+                <li><i class="fa" aria-hidden="true"></i> </li>
+                <li><i class="fa" aria-hidden="true"></i> </li>
+                <li><i class="fa" aria-hidden="true"></i> </li>
+                <a id="logout" href=""><li><i class="fa fa-times-circle-o" aria-hidden="true"></i>注销 </li></a>
+            </ul>
         </div>
+
+
     </div>
 </div>
 <!--//banner-bottom-->
@@ -194,15 +196,15 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4>登录</h4>
                 <div class="login-form">
-                    <form action="#" method="post">
-                        <input type="email" name="email" placeholder="电子邮件" required="">
-                        <input type="password" name="password" placeholder="密码" required="">
+                    <form id="login" method="post">
+                        <input id="l_email" type="email" name="email" placeholder="电子邮件" required="">
+                        <input id="l_password" type="password" name="password" placeholder="密码" required="">
                         <div class="tp">
                             <input type="submit" value="登录">
                         </div>
                         <div class="forgot-grid">
                             <div class="log-check">
-                                <label class="checkbox"><input type="checkbox" name="checkbox">记住用户名</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox" checked>下次自动登录</label>
                             </div>
                             <div class="forgot">
                                 <a href="#" data-toggle="modal" data-target="#myModal2">忘记密码</a>
@@ -225,20 +227,20 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4>注册</h4>
                 <div class="login-form">
-                    <form action="#" method="post">
-                        <input type="text" name="name" placeholder="用户名" required="">
-                        <input type="email" name="email" placeholder="电子邮件" required="">
-                        <input type="password" name="password" placeholder="密码" required="">
-                        <input type="password" name="conform password" placeholder="确认密码" required="">
+                    <form id="register" method="post">
+                        <input id="r_username" type="text" name="name" placeholder="用户名" required="">
+                        <input id="r_email" type="email" name="email" placeholder="电子邮件" required="">
+                        <input id="r_password" type="password" name="password" placeholder="密码" required="">
+                        <input id="r_password2" type="password" name="conform password" placeholder="确认密码" required="">
                         <div class="signin-rit">
-													<span class="agree-checkbox">
-														<label class="checkbox"><input type="checkbox" name="checkbox">我同意 <a
-                                                                class="w3layouts-t" href="#" target="_blank">使用条款</a> 和 <a
-                                                                class="w3layouts-t" href="#" target="_blank">隐私政策</a></label>
-													</span>
+                            <span class="agree-checkbox">
+                                <label class="checkbox"><input id="agree" type="checkbox" name="checkbox">我同意 <a
+                                        class="w3layouts-t" href="#" target="_blank">使用条款</a> 和 <a
+                                        class="w3layouts-t" href="#" target="_blank">隐私政策</a></label>
+                            </span>
                         </div>
                         <div class="tp">
-                            <input type="submit" value="注册">
+                            <input id="r_submit" type="submit" value="注册">
                         </div>
                     </form>
                 </div>
@@ -2102,54 +2104,11 @@
 <script type="text/javascript" src="js/jquery.zoomslider.min.js"></script>
 <!-- search-jQuery -->
 <script src="js/main.js"></script>
-<script src="js/simplePlayer.js"></script>
-<script>
-    $("document").ready(function () {
-        $("#video").simplePlayer();
-    });
-</script>
-<script>
-    $("document").ready(function () {
-        $("#video1").simplePlayer();
-    });
-</script>
-<script>
-    $("document").ready(function () {
-        $("#video2").simplePlayer();
-    });
-</script>
-<script>
-    $("document").ready(function () {
-        $("#video3").simplePlayer();
-    });
-</script>
 
 <!-- pop-up-box -->
 <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 <!--//pop-up-box -->
 
-<div id="small-dialog1" class="mfp-hide">
-    <iframe src="https://player.vimeo.com/video/165197924?color=ffffff&title=0&byline=0&portrait=0"></iframe>
-</div>
-<div id="small-dialog2" class="mfp-hide">
-    <iframe src="https://player.vimeo.com/video/165197924?color=ffffff&title=0&byline=0&portrait=0"></iframe>
-</div>
-<script>
-    $(document).ready(function () {
-        $('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
-            type: 'inline',
-            fixedContentPos: false,
-            fixedBgPos: true,
-            overflowY: 'auto',
-            closeBtnInside: true,
-            preloader: false,
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'my-mfp-zoom-in'
-        });
-
-    });
-</script>
 <script src="js/easy-responsive-tabs.js"></script>
 <script>
     $(document).ready(function () {
@@ -2220,7 +2179,9 @@
 </script>
 <!--end-smooth-scrolling-->
 <script src="js/bootstrap.js"></script>
-
-
+<script src="js/check_session.js"></script>
+<script src="js/register.js"></script>
+<script src="js/login.js"></script>
+<script src="js/logout.js"></script>
 </body>
 </html>

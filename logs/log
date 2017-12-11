@@ -66,3 +66,48 @@ WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
+ERROR send_email.py:14 (554, 'DT:SPM 163 smtp5,D9GowACXXfhaRy5aawAUAQ--.50S2 1512982371,please see http://mail.163.com/help/help_spam_16.htm?ip=111.199.190.127&hostid=smtp5&time=1512982371')
+ERROR passport.py:78 (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry 'flavio' for key 'username'") [SQL: u'INSERT INTO users (create_time, update_time, username, password_hash, email, is_activate) VALUES (%s, %s, %s, %s, %s, %s)'] [parameters: (datetime.datetime(2017, 12, 11, 16, 54, 36, 584781), datetime.datetime(2017, 12, 11, 16, 54, 36, 584793), 'flavio', 'pbkdf2:sha256:50000$i2hBXeQV$e9442898ed44f06bc363c4bce7c192a79ea2a3657eaf5677aee442d470ceaddc', 'youthzhulingyun@163.com', 0)]
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:116 Signature expired
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:118 Signature expired
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:118 Signature expired
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:118 Signature expired
+ERROR passport.py:118 Signature expired
+ERROR passport.py:118 Signature expired
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:119 Signature expired
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:119 Signature expired
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:119 Signature expired
+WARNING _internal.py:87  * Debugger is active!
+ERROR passport.py:119 Signature '7eOymVfNtwjbvWxnZ5jlHDgomZbf7QJzaN5bTlKTaTU' does not match
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
