@@ -1,22 +1,16 @@
 # coding:utf-8
 import logging
 import re
-
-from flask import current_app
 from flask import redirect
 from flask.testsuite.config import SECRET_KEY
-
 from app import redis_store, db
-from app.constants import LOGIN_ERROR_MAX_NUM, LOGIN_ERROR_FORBID_TIME
 from app.models import User
 from app.response_code import RET
 from app.utils.send_email import send_email_thread
 from . import api
 from flask import request, jsonify, session
-from app.utils.commons import login_required
 from flask_restful import Resource, Api
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from flask import render_template
 
 api = Api(api)
 

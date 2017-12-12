@@ -4,6 +4,7 @@ from datetime import datetime
 
 from flask.testsuite.config import SECRET_KEY
 
+from app import constants
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
@@ -43,3 +44,49 @@ class User(BaseModel, db.Model):
 
     def check_password(self, value):
         return check_password_hash(self.password_hash, value)
+
+# class Teleplay(BaseModel, db.Model):
+#     """电视剧"""
+#
+#     __tablename__ = "teleplays"
+#
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(32), nullable=False)
+#     profile = db.Column(db.String(128), nullable=False) # 简介
+#     premiere = db.Column(db.Date, nullable=False) # 首播
+#     country = db.Column(db.String(32), nullable=False)
+#     default_image = db.Column(db.String(128), nullable=False)
+#     score = db.Column(db.Float, nullable=False)
+#     is_delete = db.Column(db.Boolean, default=False)
+#
+class TheatricalFilm(BaseModel, db.Model):
+    """院线电影"""
+
+    __tablename__ = "theatrical_films"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32), nullable=False)
+    profile = db.Column(db.String(128), nullable=False) # 简介
+    actor = db.Column(db.String(32), nullable=False) # 演员
+    premiere = db.Column(db.Date, nullable=False) # 上映
+    country = db.Column(db.String(32), nullable=False)
+    default_image = db.Column(db.String(128), nullable=False)
+    score = db.Column(db.Float, nullable=False)  # 评分
+    url = db.Column(db.String(128), nullable=False)
+    is_delete = db.Column(db.Boolean, default=False)
+
+    def get_year(self):
+        return self.premiere.strftime("%Y-%m-%d").split("-")[0]
+
+    def to_dict(self):
+        """自定义的方法，将对象转换为字典"""
+        self.get_year()
+
+        film_dict = {
+            "id": self.id,
+            "name": self.name,
+            "year": self.get_year(),
+            "default_image": constants.QINIU_URL_DOMAIN + self.default_image,
+            "score": self.score
+        }
+        return film_dict
