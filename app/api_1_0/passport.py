@@ -235,6 +235,10 @@ class Session(Resource):
 
             return jsonify(errno=RET.LOGINERR, errmsg='用户名或密码输入错误')
 
+        # 判断用户是否激活
+        if not user.is_activate:
+            return jsonify(errno=RET.USERERR, errmsg='请对账号进行激活')
+
         # 3. try:如果手机和密码都正确, 说明登录成功, 清除之前保存的错误次数
         try:
             redis_store.delete('access_' + user_ip)

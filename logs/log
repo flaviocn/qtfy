@@ -206,3 +206,140 @@ WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR theatrical_film.py:184 (_mysql_exceptions.IntegrityError) (1364, "Field 'id' doesn't have a default value") [SQL: u'INSERT INTO theatrical_films_comment (create_time, update_time, user_name, comment, theatrical_film_id) VALUES (%s, %s, %s, %s, %s)'] [parameters: (datetime.datetime(2017, 12, 13, 15, 9, 27, 284458), datetime.datetime(2017, 12, 13, 15, 9, 27, 284472), 'flavio', 'test3', u'1')]
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR theatrical_film.py:184 (_mysql_exceptions.IntegrityError) (1364, "Field 'id' doesn't have a default value") [SQL: u'INSERT INTO theatrical_films_comment (create_time, update_time, user_name, comment, theatrical_film_id) VALUES (%s, %s, %s, %s, %s)'] [parameters: (datetime.datetime(2017, 12, 13, 15, 12, 17, 963085), datetime.datetime(2017, 12, 13, 15, 12, 17, 963099), 'flavio', '123', u'1')]
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:58 'BaseQuery' object has no attribute 'query'
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:58 unsupported operand type(s) for -: 'str' and 'int'
+ERROR tvshow.py:58 unsupported operand type(s) for -: 'str' and 'int'
+ERROR tvshow.py:58 unsupported operand type(s) for -: 'str' and 'int'
+ERROR tvshow.py:58 unsupported operand type(s) for -: 'str' and 'int'
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:36 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:36 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:80 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:36 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:80 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:36 cannot concatenate 'str' and 'int' objects
+ERROR tvshow.py:80 cannot concatenate 'str' and 'int' objects
+ERROR tvshow.py:36 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:80 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:36 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:80 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:89 hset() takes exactly 4 arguments (6 given)
+ERROR tvshow.py:89 hset() takes exactly 4 arguments (6 given)
+ERROR tvshow.py:89 hset() takes exactly 4 arguments (6 given)
+ERROR tvshow.py:89 hset() takes exactly 4 arguments (6 given)
+ERROR tvshow.py:89 hset() takes exactly 4 arguments (6 given)
+ERROR tvshow.py:89 hset() takes exactly 4 arguments (6 given)
+ERROR tvshow.py:89 hset() takes exactly 4 arguments (6 given)
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found

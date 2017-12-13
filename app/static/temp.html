@@ -292,7 +292,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover"
                                                                          style="opacity: 1;"> </span></a>
 <script type="text/javascript" src="js/modernizr-2.6.2.min.js"></script>
-<script src="js/jquery-1.11.1.min.js"></script>
 <!-- Dropdown-Menu-JavaScript -->
 <script>
     $(document).ready(function () {
@@ -310,7 +309,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 <!-- //Dropdown-Menu-JavaScript -->
 
-
 <script type="text/javascript" src="js/jquery.zoomslider.min.js"></script>
 <!-- search-jQuery -->
 <script src="js/main.js"></script>
@@ -318,23 +316,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- pop-up-box -->
 <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 <!--//pop-up-box -->
-<script>
-    $(document).ready(function () {
-        $('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
-            type: 'inline',
-            fixedContentPos: false,
-            fixedBgPos: true,
-            overflowY: 'auto',
-            closeBtnInside: true,
-            preloader: false,
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'my-mfp-zoom-in'
-        });
 
-    });
-</script>
 <script src="js/easy-responsive-tabs.js"></script>
+<!--/script-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!--end-smooth-scrolling-->
+<script src="js/bootstrap.js"></script>
+<script src="js/check_session.js"></script>
+<script src="js/register.js"></script>
+<script src="js/login.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/owl.carousel.js"></script>
 <script>
     $(document).ready(function () {
         $('#horizontalTab').easyResponsiveTabs({
@@ -357,28 +350,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     });
 </script>
-<script src="js/owl.carousel.js"></script>
 <script>
     $(document).ready(function () {
-        $("#owl-demo").owlCarousel({
+        setTimeout(function () {
+            $("#owl-demo").owlCarousel({
 
-            autoPlay: 3000, //Set AutoPlay to 3 seconds
-            autoPlay: true,
-            navigation: true,
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+                autoPlay: true,
+                navigation: true,
 
-            items: 5,
-            itemsDesktop: [640, 4],
-            itemsDesktopSmall: [414, 3]
+                items: 5,
+                itemsDesktop: [640, 4],
+                itemsDesktopSmall: [414, 3]
 
-        });
-
+            });
+        }, 1000)
     });
 </script>
-
-<!--/script-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
         $(".scroll").click(function (event) {
@@ -402,7 +390,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
-<!--end-smooth-scrolling-->
-<script src="js/bootstrap.js"></script>
 </body>
 </html>

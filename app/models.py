@@ -9,13 +9,11 @@ from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
-
 class BaseModel(object):
     """模型基类，为每个模型补充创建时间与更新时间"""
 
     create_time = db.Column(db.DateTime, default=datetime.now)  # 记录的创建时间
     update_time = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now)  # 记录的更新时间
-
 
 class User(BaseModel, db.Model):
     """用户"""
@@ -45,20 +43,6 @@ class User(BaseModel, db.Model):
     def check_password(self, value):
         return check_password_hash(self.password_hash, value)
 
-# class Teleplay(BaseModel, db.Model):
-#     """电视剧"""
-#
-#     __tablename__ = "teleplays"
-#
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(32), nullable=False)
-#     profile = db.Column(db.String(128), nullable=False) # 简介
-#     premiere = db.Column(db.Date, nullable=False) # 首播
-#     country = db.Column(db.String(32), nullable=False)
-#     default_image = db.Column(db.String(128), nullable=False)
-#     score = db.Column(db.Float, nullable=False)
-#     is_delete = db.Column(db.Boolean, default=False)
-#
 class TheatricalFilm(BaseModel, db.Model):
     """院线电影"""
 
@@ -91,4 +75,77 @@ class TheatricalFilm(BaseModel, db.Model):
             "url": self.url
         }
         return film_dict
+
+class TheatricalFilmComment(BaseModel, db.Model):
+    """院线电影评论"""
+
+    __tablename__ = "theatrical_films_comment"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_name = db.Column(db.String(32), nullable=False)
+    comment = db.Column(db.String(128), nullable=False)
+    theatrical_film_id = db.Column(db.Integer, db.ForeignKey("theatrical_films.id"), nullable=False)  # 院线电影id
+
+    def get_date_time(self, date_time):
+        return date_time.strftime("%Y-%m-%d %H:%M:%S")
+
+    def to_dict(self):
+        """自定义的方法，将对象转换为字典"""
+
+        film_dict = {
+            "id": self.id,
+            "user_name": self.user_name,
+            "comment": self.comment,
+            "date_time": self.get_date_time(self.create_time)
+        }
+        return film_dict
+
+class TvShow(BaseModel, db.Model):
+    """电视剧"""
+
+    __tablename__ = "tv_shows"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32), nullable=False)
+    profile = db.Column(db.String(128), nullable=False) # 简介
+    type = db.Column(db.SmallInteger, nullable=False) # 类型
+    actor = db.Column(db.String(32), nullable=False)
+    premiere = db.Column(db.Date, nullable=False) # 首播
+    default_image = db.Column(db.String(128), nullable=False)
+    score = db.Column(db.Float, nullable=False)
+    default_url = db.Column(db.String(128), nullable=False)
+    is_delete = db.Column(db.Boolean, default=False)
+
+    def get_date(self):
+        return self.premiere.strftime("%Y-%m-%d")
+
+    def to_dict(self):
+        """自定义的方法，将对象转换为字典"""
+
+        tv_dict = {
+            "id": self.id,
+            "name": self.name,
+            "profile": self.profile,
+            "premiere": self.get_date(),
+            "actor": self.actor,
+            "default_image": constants.QINIU_URL_DOMAIN + self.default_image,
+            "score": self.score
+        }
+        return tv_dict
+
+class TvShowNum(BaseModel, db.Model):
+    __tablename__ = "tv_shows_detail"
+
+    id = db.Column(db.Integer, primary_key=True)
+    num = db.Column(db.SmallInteger, nullable=False)  # 集数
+    url = db.Column(db.String(128), nullable=False)
+    tv_id = db.Column(db.Integer, db.ForeignKey("tv_shows.id"), nullable=False)  # 电视剧id
+
+    # def to_dict(self):
+    #     """自定义的方法，将对象转换为字典"""
+    #
+    #     tv_dict = {
+    #         "name": self.name
+    #     }
+    #     return tv_dict
 

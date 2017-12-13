@@ -17,6 +17,7 @@ $(function () {
     var queryData = decodeQuery();
     var id = queryData["id"];
 
+    // 获取院线电影信息
     $.get("/api/v1_0/theatrical_film", {"id": id}, function (resp) {
         if (resp.errno == 0) {
             // 前端内容填充
@@ -102,6 +103,7 @@ $(function () {
         }
     })
 
+    // 获取院线电影列表信息
     $.get("/api/v1_0/theatrical_film_list", function (resp) {
         if (resp.errno == 0) {
             //前端页面填充N个div
@@ -120,5 +122,40 @@ $(function () {
             alert(resp.errmsg);
         }
     })
+
+    // 获取电视剧评论信息
+    // $.get("/api/v1_0/theatrical_film_comments", {"id": id}, function (resp) {
+    //     if (resp.errno == 0) {
+    //         //前端页面填充N个div
+    //         var html = $("#comments").html()
+    //         for (i = 1; i < resp.comments.length; i++) {
+    //             $("#comments").append(html)
+    //         }
+    //
+    //         // 前端内容填充
+    //         $.each(resp.comments, function (index, element) {
+    //             $(".response-info").eq(index).find("h6").html(element.user_name)
+    //             $(".response-info").eq(index).find("p").html(element.comment)
+    //             $(".response-info").eq(index).find("li").html(element.date_time)
+    //         })
+    //     } else {
+    //         alert(resp.errmsg)
+    //     }
+    // })
+
+    // 提交评论
+    // $("#resp").submit(function (e) {
+    //     // 阻止表单的默认行为
+    //     e.preventDefault();
+    //
+    //     var comment = $("#comment").val()
+    //     $.post("/api/v1_0/theatrical_film_comments", {"id": id, "comment": comment}, function (resp) {
+    //         if (resp.errno == 0) {
+    //             location.reload()
+    //         } else {
+    //             alert(resp.errmsg)
+    //         }
+    //     })
+    // })
 })
 

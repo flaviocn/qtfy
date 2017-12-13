@@ -10,6 +10,22 @@ function getCookie(name) {
 
 $(document).ready(function() {
 
+    // 检查用户是否登录
+    $.get("/api/v1_0/sessions", function(resp) {
+    if (resp.errno == 0) {
+        // 表示用户是登录
+        $("#username").html('<i class="fa fa-user" aria-hidden="true"></i>' + resp.data.username)
+        $("#email").html('<i class="fa fa-envelope" aria-hidden="true"></i>' + resp.data.email)
+        $("#has_login").show()
+        $("#not_login").hide()
+    } else {
+        // 表示用户未登录
+        $("#not_login").show()
+        $("#has_login").hide()
+    }
+}, "json");
+
+    // 注册
     $("#r_username").change(function () {
         var username = $("#r_username").val();
         var email = $("#r_email").val();
@@ -69,11 +85,65 @@ $(document).ready(function() {
                 if (resp.errno == 0) {
                     // 注册成功, 引导到主页页面
                     alert("注册成功，请前往邮箱激活账号");
-                    location.href = "/";
+                    location.reload();
                 }else{
                     alert(resp.errmsg);
                 }
             }
         })
     });
+
+    // 登录
+    $("#login").submit(function(e){
+        e.preventDefault();
+        email = $("#l_email").val();
+        password = $("#l_password").val();
+
+        // 将表单的数据存放到对象data中
+        var data = {
+            email: email,
+            password: password
+        };
+        // 将data转为json字符串
+        var jsonData = JSON.stringify(data);
+        $.ajax({
+            url:"/api/v1_0/sessions",
+            type:"post",
+            data: jsonData,
+            contentType: "application/json",
+            dataType: "json",
+            headers:{
+                "X-CSRFToken":getCookie("csrf_token"),
+            },
+            success: function (data) {
+                if (data.errno == 0) {
+                    // 登录成功，跳转到主页
+                    location.reload();
+                    return;
+                }
+                else {
+                    // 其他错误信息，在页面中展示
+                    alert(data.errmsg)
+                    return;
+                }
+            }
+        });
+    });
+
+    // 注销
+    $("#logout").click(function () {
+        $.ajax({
+            url: "/api/v1_0/sessions",
+            type: "delete",
+            headers: {
+                "X-CSRFToken": getCookie("csrf_token")
+            },
+            dataType: "json",
+            success: function (resp) {
+                if (resp.errno == 0) {
+                    location.href = "/";
+                }
+            }
+        });
+    })
 })
