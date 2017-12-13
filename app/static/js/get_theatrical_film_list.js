@@ -10,7 +10,7 @@ $.get("/api/v1_0/theatrical_film_list", function (resp) {
             $("#owl-demo").append(html)
         }
         $.each(resp.films, function (index, element) {
-            $("#owl-demo .item").eq(index).find("a").attr("onclick", "get_theatrical_film(" + element.id + ")");
+            $("#owl-demo .item").eq(index).find("a").attr("href", "theatrical_film.html?id=" + element.id);
             $("#owl-demo .item").eq(index).find("img.film").attr("src", element.default_image);
             $("#owl-demo .item").eq(index).find("a.film").html(element.name);
             $("#owl-demo .item").eq(index).find("p.film").html(element.year);

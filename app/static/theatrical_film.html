@@ -162,39 +162,59 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--/banner-bottom-->
 <div class="w3_agilits_banner_bootm">
     <div class="w3_agilits_inner_bottom">
-        <div class="col-md-6 wthree_agile_login">
+        <div id="not_login" class="col-md-6 wthree_agile_login" style="display: block;">
             <ul>
                 <li><i class="fa fa-envelope" aria-hidden="true"></i> flaviocn@163.cn</li>
                 <li><a href="#" class="login" data-toggle="modal" data-target="#myModal4">登录</a></li>
                 <li><a href="#" class="login reg" data-toggle="modal" data-target="#myModal5">注册</a></li>
-
             </ul>
         </div>
+        <!--style="display: block;"-->
+        <div id="has_login" class="col-md-6 wthree_agile_login" style="display: block;">
+            <ul>
+                <a href="">
+                    <li id="username"></li>
+                </a>
+                <li><i class="fa" aria-hidden="true"></i></li>
+                <li><i class="fa" aria-hidden="true"></i></li>
+                <li><i class="fa" aria-hidden="true"></i></li>
+                <a href="">
+                    <li id="email"></li>
+                </a>
+                <li><i class="fa" aria-hidden="true"></i></li>
+                <li><i class="fa" aria-hidden="true"></i></li>
+                <li><i class="fa" aria-hidden="true"></i></li>
+                <a id="logout" href="">
+                    <li><i class="fa fa-times-circle-o" aria-hidden="true"></i>注销</li>
+                </a>
+            </ul>
+        </div>
+
+
     </div>
 </div>
 <!--//banner-bottom-->
-<!-- Modal1 -->
+<!-- 登录 -->
 <div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
-
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4>Login</h4>
+                <h4>登录</h4>
                 <div class="login-form">
-                    <form action="#" method="post">
-                        <input type="email" name="email" placeholder="E-mail" required="">
-                        <input type="password" name="password" placeholder="Password" required="">
+                    <form id="login" method="post">
+                        <input id="l_email" type="email" name="email" placeholder="电子邮件" required="">
+                        <input id="l_password" type="password" name="password" placeholder="密码" required="">
                         <div class="tp">
-                            <input type="submit" value="LOGIN NOW">
+                            <input type="submit" value="登录">
                         </div>
                         <div class="forgot-grid">
                             <div class="log-check">
-                                <label class="checkbox"><input type="checkbox" name="checkbox">Remember me</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox" checked>下次自动登录</label>
                             </div>
                             <div class="forgot">
-                                <a href="#" data-toggle="modal" data-target="#myModal2">Forgot Password?</a>
+                                <a href="#" data-toggle="modal" data-target="#myModal6">忘记密码</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -205,31 +225,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
 </div>
-<!-- //Modal1 -->
-<!-- Modal1 -->
+<!-- 注册 -->
 <div class="modal fade" id="myModal5" tabindex="-1" role="dialog">
-
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4>Register</h4>
+                <h4>注册</h4>
                 <div class="login-form">
-                    <form action="#" method="post">
-                        <input type="text" name="name" placeholder="Name" required="">
-                        <input type="email" name="email" placeholder="E-mail" required="">
-                        <input type="password" name="password" placeholder="Password" required="">
-                        <input type="password" name="conform password" placeholder="Confirm Password" required="">
+                    <form id="register" method="post">
+                        <input id="r_username" type="text" name="name" placeholder="用户名" required="">
+                        <input id="r_email" type="email" name="email" placeholder="电子邮件" required="">
+                        <input id="r_password" type="password" name="password" placeholder="密码" required="">
+                        <input id="r_password2" type="password" name="conform password" placeholder="确认密码" required="">
                         <div class="signin-rit">
-														<span class="agree-checkbox">
-														<label class="checkbox"><input type="checkbox" name="checkbox">I agree to your <a
-                                                                class="w3layouts-t" href="#" target="_blank">Terms of Use</a> and <a
-                                                                class="w3layouts-t" href="#" target="_blank">Privacy Policy</a></label>
-													</span>
+                            <span class="agree-checkbox">
+                                <label class="checkbox"><input id="agree" type="checkbox" name="checkbox" checked>我同意 <a
+                                        class="w3layouts-t" href="#" target="_blank">使用条款</a> 和 <a
+                                        class="w3layouts-t" href="#" target="_blank">隐私政策</a></label>
+                            </span>
                         </div>
                         <div class="tp">
-                            <input type="submit" value="REGISTER NOW">
+                            <input id="r_submit" type="submit" value="注册">
                         </div>
                     </form>
                 </div>
@@ -237,7 +255,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
 </div>
-<!-- //Modal1 -->
 <!-- breadcrumb -->
 <div class="w3_breadcrumb">
     <div class="breadcrumb-inner">
@@ -253,8 +270,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="w3_content_agilleinfo_inner">
     <div class="agile_featured_movies">
         <div class="inner-agile-w3l-part-head">
-            <h3 class="w3l-inner-h-title">电影名</h3>
-            <p class="w3ls_head_para">占位</p>
+            <!--<h3 class="w3l-inner-h-title"></h3>-->
+            <!--<p class="w3ls_head_para"></p>-->
         </div>
         <div class="latest-news-agile-info">
             <div class="col-md-8 latest-news-agile-left-content">
@@ -321,18 +338,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-4 latest-news-agile-right-content">
                 <div class="video_agile_player sidebar-player">
-                    <div class="player-text side-bar-info">
-                        <p class="fexi_header">电影名 </p>
-                        <p class="fexi_header_para"><span class="conjuring_w3">简介<label>:</label></span>Me
-                            我之前你的官方预告片＃2（2016） - 艾米莉亚克拉克，山姆·克拉克林电影HD一个小镇上的女孩形成一个不太可能....</p>
-                        <p class="fexi_header_para"><span>上映日期<label>:</label></span>2017-12-12 </p>
-                        <p class="fexi_header_para">
-                            <span>主要演员<label>:</label> </span>
-                            <a href="genre.html">老李</a> |
-                            <a href="genre.html">老张</a> |
-                            <a href="genre.html">老王</a>
+                    <div class="player-text side-bar-info" style="width: 320px">
+                        <p class="fexi_header"></p>
+                        <p class="fexi_header_para" style="margin-top: 26px">
+                            <span class="conjuring_w3">简介<label>:</label></span>
+                            <temp id="profile"></temp>
                         </p>
-                        <p class="fexi_header_para fexi_header_para1"><span>评分<label>:</label></span>
+                        <p class="fexi_header_para" style="margin-top: 46px">
+                            <span>上映日期<label>:</label></span>
+                            <temp id="premiere"></temp>
+                        </p>
+                        <p class="fexi_header_para" style="margin-top: 26px">
+                            <span>主要演员<label>:</label> </span>
+                            <temp id="actor"></temp>
+                        </p>
+                        <p class="fexi_header_para fexi_header_para1" style="margin-top: 26px">
+                            <span>评分<label>:</label></span>
                             <a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a>
@@ -348,15 +369,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="w3ls-recent-grids">
                         <div class="w3l-recent-grid">
                             <div class="wom">
-                                <a href="single.html"><img src="images/m12.jpg" alt=" " class="img-responsive"></a>
+                                <a href="single.html"><img src="images/m12.jpg" alt=" " class="img-responsive film"></a>
                             </div>
                             <div class="wom-right">
-                                <h5><a href="single.html">Lorem Integer rutrum</a></h5>
-                                <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
-                                    Ut tellus dolor, dapibus eget.</p>
+                                <h5 style="margin-top: 10px"><a href="single.html" class="film"></a></h5>
+                                <p class="film"></p>
                                 <ul class="w3l-sider-list">
-                                    <li><i class="fa fa-clock-o" aria-hidden="true"></i>On Jan 12, 2016</li>
-                                    <li><i class="fa fa-eye" aria-hidden="true"></i> 2602</li>
+                                    <li style="float: right" class="film"><i class="fa fa-clock-o" aria-hidden="true"></i></li>
                                 </ul>
                             </div>
                             <div class="clearfix"></div>
@@ -371,8 +390,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 <!--//content-inner-section-->
-
-
 <!--/footer-bottom-->
 <div class="contact-w3ls" id="contact">
     <div class="footer-w3lagile-inner">
@@ -423,6 +440,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- pop-up-box -->
 <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 <!--//pop-up-box -->
+<script src="js/easy-responsive-tabs.js"></script>
+<script src="js/owl.carousel.js"></script>
+
+<!--/script-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+
+<!--end-smooth-scrolling-->
+<script src="js/get_theatrical_film.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<script src="js/check_session.js"></script>
+<script src="js/register.js"></script>
+<script src="js/login.js"></script>
+<script src="js/logout.js"></script>
+
 <script>
     $(document).ready(function () {
         $('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
@@ -439,7 +472,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
-<script src="js/easy-responsive-tabs.js"></script>
 <script>
     $(document).ready(function () {
         $('#horizontalTab').easyResponsiveTabs({
@@ -462,28 +494,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     });
 </script>
-<script src="js/owl.carousel.js"></script>
 <script>
     $(document).ready(function () {
-        $("#owl-demo").owlCarousel({
+        setTimeout(function () {
+            $("#owl-demo").owlCarousel({
 
-            autoPlay: 3000, //Set AutoPlay to 3 seconds
-            autoPlay: true,
-            navigation: true,
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+                autoPlay: true,
+                navigation: true,
 
-            items: 5,
-            itemsDesktop: [640, 4],
-            itemsDesktopSmall: [414, 3]
+                items: 5,
+                itemsDesktop: [640, 4],
+                itemsDesktopSmall: [414, 3]
 
-        });
-
+            });
+        }, 1000)
     });
 </script>
-
-<!--/script-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
         $(".scroll").click(function (event) {
@@ -507,7 +534,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
-<!--end-smooth-scrolling-->
-<script src="js/bootstrap.js"></script>
 </body>
 </html>

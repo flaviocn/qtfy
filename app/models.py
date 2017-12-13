@@ -69,24 +69,26 @@ class TheatricalFilm(BaseModel, db.Model):
     profile = db.Column(db.String(128), nullable=False) # 简介
     actor = db.Column(db.String(32), nullable=False) # 演员
     premiere = db.Column(db.Date, nullable=False) # 上映
-    country = db.Column(db.String(32), nullable=False)
     default_image = db.Column(db.String(128), nullable=False)
     score = db.Column(db.Float, nullable=False)  # 评分
     url = db.Column(db.String(128), nullable=False)
     is_delete = db.Column(db.Boolean, default=False)
 
-    def get_year(self):
-        return self.premiere.strftime("%Y-%m-%d").split("-")[0]
+    def get_date(self):
+        return self.premiere.strftime("%Y-%m-%d")
 
     def to_dict(self):
         """自定义的方法，将对象转换为字典"""
-        self.get_year()
 
         film_dict = {
             "id": self.id,
             "name": self.name,
-            "year": self.get_year(),
+            "profile": self.profile,
+            "actor": self.actor,
+            "premiere": self.get_date(),
             "default_image": constants.QINIU_URL_DOMAIN + self.default_image,
-            "score": self.score
+            "score": self.score,
+            "url": self.url
         }
         return film_dict
+
