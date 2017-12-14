@@ -154,10 +154,12 @@ class TvShowDetail(Resource):
         if not tv_url:
             # 查询MySQL所有的数据
             try:
-                tv_url = TvShowNum.query.filter_by(tv_id=id, num=num).first().get_real_url()
+                tv = TvShowNum.query.filter_by(tv_id=id, num=num).first()
             except Exception as e:
                 logging.error(e)
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+
+            tv_url = tv.get_real_url()
 
             # 4. 保存redis中
             try:
@@ -190,6 +192,6 @@ class TvShowDetail(Resource):
                 db.session.rollback()
 
         # 二. 返回数据
-        return jsonify(errno=RET.OK, errmsg="查询电视剧成功", tv=json.loads(tv_json), tv_url=str(tv_url), tv_nums=json.loads(tv_nums_json), tv_num=str(num))
+        return jsonify(errno=RET.OK, errmsg="查询电视剧成功", tv=json.loads(tv_json), tv_url=tv_url, tv_nums=json.loads(tv_nums_json), tv_num=str(num))
 
 api.add_resource(TvShowDetail, '/tvshow')

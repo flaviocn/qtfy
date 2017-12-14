@@ -30,9 +30,14 @@ $(function () {
 
             // 电视剧集数列表
             var html = $(".blog-pagenat-wthree ul").html()
+            var cur_html = $('<li><a style="color: #02cba9" href="#">1</a></li>')
             $(".blog-pagenat-wthree ul").empty()
-            for (var i = 0;i < resp.tv_nums.length; i++){
-                $(".blog-pagenat-wthree ul").append(html)
+            for (var i = 1;i <= resp.tv_nums.length; i++){
+                if (i == resp.tv_num){
+                    $(".blog-pagenat-wthree ul").append(cur_html)
+                } else{
+                    $(".blog-pagenat-wthree ul").append(html)
+                }
             }
 
             $lis = $(".blog-pagenat-wthree ul li")

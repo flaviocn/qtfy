@@ -113,7 +113,6 @@ class TvShow(BaseModel, db.Model):
     premiere = db.Column(db.Date, nullable=False) # 首播
     default_image = db.Column(db.String(128), nullable=False)
     score = db.Column(db.Float, nullable=False)
-    default_url = db.Column(db.String(128), nullable=False)
     is_delete = db.Column(db.Boolean, default=False)
 
     def get_date(self):
