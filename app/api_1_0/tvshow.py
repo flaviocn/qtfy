@@ -20,8 +20,7 @@ class TvShowList(Resource):
             4. 保存redis中
             5. 如果有缓存, 返回缓存数据
             6. 返回给浏览器
-
-            """
+        """
 
         type = request.args.get("type", "0")
         page = request.args.get("page", "1")
@@ -43,19 +42,17 @@ class TvShowList(Resource):
         # 2. 没有缓存, 查询MySQL
         if not tv_json:
             # 查询MySQL所有的数据
-
-            # 分类 排序
-            if type == "1":
-                tv_query = TvShow.query.filter_by(type=1).order_by(TvShow.create_time.desc())
-            elif type == "2":
-                tv_query = TvShow.query.filter_by(type=2).order_by(TvShow.create_time.desc())
-            elif type == "3":
-                tv_query = TvShow.query.filter_by(type=3).order_by(TvShow.create_time.desc())
-            else:
-                tv_query = TvShow.query.order_by(TvShow.create_time.desc())
-
-            # 分页
             try:
+                # 分类 排序
+                if type == "1":
+                    tv_query = TvShow.query.filter_by(type=1).order_by(TvShow.create_time.desc())
+                elif type == "2":
+                    tv_query = TvShow.query.filter_by(type=2).order_by(TvShow.create_time.desc())
+                elif type == "3":
+                    tv_query = TvShow.query.filter_by(type=3).order_by(TvShow.create_time.desc())
+                else:
+                    tv_query = TvShow.query.order_by(TvShow.create_time.desc())
+            # 分页
                                               # 页数 每页数量 错误输出
                 tv_page = tv_query.paginate(int(page), int(size), False)
             except Exception as e:
@@ -133,7 +130,11 @@ class TvShowDetail(Resource):
         # 2. 没有缓存, 查询MySQL
         if not tv_json:
             # 查询MySQL所有的数据
-            tv = TvShow.query.filter_by(id=id).first()
+            try:
+                tv = TvShow.query.filter_by(id=id).first()
+            except Exception as e:
+                logging.error(e)
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             # 3. 需要对数据转JSON
             tv_dict = tv.to_dict()
@@ -152,7 +153,11 @@ class TvShowDetail(Resource):
 
         if not tv_url:
             # 查询MySQL所有的数据
-            tv_url = TvShowNum.query.filter_by(tv_id=id, num=num).first().url
+            try:
+                tv_url = TvShowNum.query.filter_by(tv_id=id, num=num).first().get_real_url()
+            except Exception as e:
+                logging.error(e)
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             # 4. 保存redis中
             try:
@@ -164,7 +169,11 @@ class TvShowDetail(Resource):
 
         if not tv_nums_json:
             # 查询MySQL所有的数据
-            tv_nums = TvShowNum.query.filter_by(tv_id=id).order_by(TvShowNum.num.asc()).all()
+            try:
+                tv_nums = TvShowNum.query.filter_by(tv_id=id).order_by(TvShowNum.num.asc()).all()
+            except Exception as e:
+                logging.error(e)
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             tv_num_list = []
             for tv_num in tv_nums:
@@ -181,6 +190,6 @@ class TvShowDetail(Resource):
                 db.session.rollback()
 
         # 二. 返回数据
-        return jsonify(errno=RET.OK, errmsg="查询电视剧成功", tv=json.loads(tv_json), tv_url=tv_url, tv_nums=json.loads(tv_nums_json))
+        return jsonify(errno=RET.OK, errmsg="查询电视剧成功", tv=json.loads(tv_json), tv_url=str(tv_url), tv_nums=json.loads(tv_nums_json), tv_num=str(num))
 
 api.add_resource(TvShowDetail, '/tvshow')

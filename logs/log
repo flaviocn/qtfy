@@ -343,3 +343,84 @@ ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
 WARNING _internal.py:87  * Debugger is active!
 ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
 ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:123 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:162 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:161 'NoneType' object has no attribute 'url'
+ERROR tvshow.py:122 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:167 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:159 'NoneType' object has no attribute 'get_real_url'
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:167 coercing to Unicode: need string or buffer, int found

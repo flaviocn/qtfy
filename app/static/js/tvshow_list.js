@@ -3,33 +3,73 @@
  */
 
 // 解析提取url中的查询字符串参数
-// function decodeQuery() {
-//     var search = decodeURI(document.location.search);
-//     return search.replace(/(^\?)/, '').split('&').reduce(function (result, item) {
-//         values = item.split('=');
-//         result[values[0]] = values[1];
-//         return result;
-//     }, {});
-// }
+function decodeQuery() {
+    var search = decodeURI(document.location.search);
+    return search.replace(/(^\?)/, '').split('&').reduce(function (result, item) {
+        values = item.split('=');
+        result[values[0]] = values[1];
+        return result;
+    }, {});
+}
 
 var html = ""
+var li_html = ""
 
-function get_content(type) {
+function get_content(type,page,size) {
+    // 获取详情页面要展示的电影id
+    var queryData = decodeQuery();
+    var page = arguments[1] ? arguments[1] : queryData["page"];
+    var size = arguments[2] ? arguments[2] : queryData["size"];
+
     // 获取电视剧信息
-    $.get("/api/v1_0/tvshow_list",{"type":type} , function (resp) {
+    $.get("/api/v1_0/tvshow_list", {"type": type, "page": page, "size": size}, function (resp) {
         if (resp.errno == 0) {
             // 前端内容填充
             $("#tv_demo").empty()
             for (i = 0; i < resp.tvs.length; i++) {
                 $("#tv_demo").append(html)
             }
+            $("#nums").empty()
+            // 页码
+            var total_page = resp.total_page
+            if (total_page <= 5) {
+                for (var i = 0; i < total_page; i++) {
+                    $li = $(li_html)
+                    $li.find("a").html(i + 1)
+                    $li.find("a").attr("href", "tvshow_list.html?type=" + type + "&page=" + (i + 1) + "&size=" + size)
+                    $("#nums").append($li)
+                }
+            } else if (page <= 3) {
+                for (var i = 0; i < 5; i++) {
+                    $li = $(li_html)
+                    $li.find("a").html(i + 1)
+                    $li.find("a").attr("href", "tvshow_list.html?type=" + type + "&page=" + (i + 1) + "&size=" + size)
+                    $("#nums").append($li)
+                }
+
+            } else if(page >= total_page - 2){
+                for (var i = total_page - 5; i < total_page; i++) {
+                    $li = $(li_html)
+                    $li.find("a").html(i + 1)
+                    $li.find("a").attr("href", "tvshow_list.html?type=" + type + "&page=" + (i + 1) + "&size=" + size)
+                    $("#nums").append($li)
+                }
+            } else {
+                for (var i = page - 3; i < page + 2; i++) {
+                    $li = $(li_html)
+                    $li.find("a").html(i + 1)
+                    $li.find("a").attr("href", "tvshow_list.html?type=" + type + "&page=" + (i + 1) + "&size=" + size)
+                    $("#nums").append($li)
+                }
+            }
 
             $.each(resp.tvs, function (index, element) {
+                $(".requested-movies").eq(index).find("a").attr("href", "tvshow.html?id="+element.id)
                 $(".requested-movies").eq(index).find("img.tv").attr("src", element.default_image)
                 $(".requested-movies").eq(index).find("a.tv").html(element.name)
                 $(".requested-movies").eq(index).find("p.tv").html(element.premiere)
 
-                //评分
+                // 评分
                 var $lis = $(".w3l-ratings").eq(index).find("li")
                 if (element.score >= 10) {
                     $lis.eq(0).find('i').attr("class", "fa fa-star")
@@ -107,7 +147,6 @@ function get_content(type) {
 
 $(function () {
     html = $("#tv_demo").html()
-    get_content(0);
+    li_html = $("#nums").html()
+    get_content(0,1,10);
 })
-
-

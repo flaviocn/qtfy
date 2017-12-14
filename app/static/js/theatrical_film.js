@@ -21,8 +21,7 @@ $(function () {
     $.get("/api/v1_0/theatrical_film", {"id": id}, function (resp) {
         if (resp.errno == 0) {
             // 前端内容填充
-            // $(".w3l-inner-h-title").html(resp.film.name)
-            // $(".w3ls_head_para").html(resp.film.name)
+            $("video").attr("src", resp.film.url)
             $(".fexi_header").html(resp.film.name)
             $("#profile").html(resp.film.profile)
             $("#premiere").html(resp.film.premiere)

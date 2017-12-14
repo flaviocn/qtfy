@@ -129,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="tvshow_list.html">电视剧</a></li>
+                            <li class="active"><a href="tvshow_list.html">电视剧</a></li>
                             <li><a href="news.html">综艺</a></li>
                             <li><a href="news.html">新闻</a></li>
                             <!--<li><a href="list.html">A - z list</a></li>-->
@@ -275,10 +275,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--/tab-section-->
             <div id="horizontalTab">
                 <ul class="resp-tabs-list inner-second">
-                    <li onclick="get_content(0)">默认</li>
-                    <li onclick="get_content(1)">国产剧</li>
-                    <li onclick="get_content(2)">英美剧</li>
-                    <li onclick="get_content(3)">日韩剧</li>
+                    <li onclick="get_content(0,1,10)">默认</li>
+                    <li onclick="get_content(1,1,10)">国产剧</li>
+                    <li onclick="get_content(2,1,10)">英美剧</li>
+                    <li onclick="get_content(3,1,10)">日韩剧</li>
                 </ul>
             </div>
         </div>
@@ -315,13 +315,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <div class="clearfix"></div>
 <div class="blog-pagenat-wthree">
-    <ul>
-        <li><a class="frist" href="#">上一页</a></li>
+    <ul id="nums">
         <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-
-        <li><a class="last" href="#">下一页</a></li>
+        <!--<li><a class="frist" href="#">上一页</a></li>-->
+        <!--<li><a class="last" href="#">下一页</a></li>-->
     </ul>
 </div>
 

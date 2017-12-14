@@ -72,7 +72,7 @@ class TheatricalFilm(BaseModel, db.Model):
             "premiere": self.get_date(),
             "default_image": constants.QINIU_URL_DOMAIN + self.default_image,
             "score": self.score,
-            "url": self.url
+            "url": constants.QINIU_URL_DOMAIN + self.url
         }
         return film_dict
 
@@ -129,7 +129,7 @@ class TvShow(BaseModel, db.Model):
             "premiere": self.get_date(),
             "actor": self.actor,
             "default_image": constants.QINIU_URL_DOMAIN + self.default_image,
-            "score": self.score
+            "score": self.score,
         }
         return tv_dict
 
@@ -141,11 +141,5 @@ class TvShowNum(BaseModel, db.Model):
     url = db.Column(db.String(128), nullable=False)
     tv_id = db.Column(db.Integer, db.ForeignKey("tv_shows.id"), nullable=False)  # 电视剧id
 
-    # def to_dict(self):
-    #     """自定义的方法，将对象转换为字典"""
-    #
-    #     tv_dict = {
-    #         "name": self.name
-    #     }
-    #     return tv_dict
-
+    def get_real_url(self):
+        return constants.QINIU_URL_DOMAIN + self.url
