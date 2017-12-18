@@ -526,3 +526,93 @@ ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
 ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR variety.py:50 (_mysql_exceptions.ProgrammingError) (1146, "Table 'qtfy.varietys' doesn't exist") [SQL: u'SELECT varietys.create_time AS varietys_create_time, varietys.update_time AS varietys_update_time, varietys.id AS varietys_id, varietys.name AS varietys_name, varietys.profile AS varietys_profile, varietys.type AS varietys_type, varietys.actor AS varietys_actor, varietys.premiere AS varietys_premiere, varietys.default_image AS varietys_default_image, varietys.score AS varietys_score, varietys.is_delete AS varietys_is_delete \nFROM varietys ORDER BY varietys.create_time DESC \n LIMIT %s, %s'] [parameters: (0, 10)]
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/Users/chunhua/.virtualenvs/flask/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/Users/chunhua/.virtualenvs/flask/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/Users/chunhua/.virtualenvs/flask/lib/python2.7/site-packages/werkzeug/serving.py", line 168, in write
+    self.send_header(key, value)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/BaseHTTPServer.py", line 401, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:50 global name 'VarietyShow' is not defined
+ERROR variety.py:50 global name 'VarietyShow' is not defined
+ERROR variety.py:50 global name 'VarietyShow' is not defined
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:149 Entity '<class 'app.models.VarietyNum'>' has no property 'tv_id'
+WARNING _internal.py:87  * Debugger is active!
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:167 Entity '<class 'app.models.VarietyNum'>' has no property 'tv_id'
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:169 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!

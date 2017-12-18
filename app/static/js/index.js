@@ -181,4 +181,95 @@ $(function () {
             alert(resp.errmsg);
         }
     })
+
+    // 获取综艺信息
+    $.get("/api/v1_0/variety_list", function (resp) {
+        if (resp.errno == 0) {
+            var html = $(".variety").html()
+            // 前端内容填充
+            $(".variety").empty()
+            for (i = 0; i < resp.varietys.length; i++) {
+                $(".variety").append(html)
+            }
+
+            $.each(resp.varietys, function (index, element) {
+                $(".variety .requested-movies").eq(index).find("a").attr("href", "tvshow.html?id=" + element.id)
+                $(".variety .requested-movies").eq(index).find("img.varietys").attr("src", element.default_image)
+                $(".variety .requested-movies").eq(index).find("a.varietys").html(element.name)
+                $(".variety .requested-movies").eq(index).find("p.varietys").html(element.premiere)
+
+                //评分
+                var $lis = $(".variety .w3l-ratings").eq(index).find("li")
+                if (element.score >= 10) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star")
+                } else if (element.score >= 9) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-half-o")
+                } else if (element.score >= 8) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-o")
+                } else if (element.score >= 7) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star-half-o")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-o")
+                } else if (element.score >= 6) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-o")
+                } else if (element.score >= 5) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star-half-o")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-o")
+                } else if (element.score >= 4) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-o")
+                } else if (element.score >= 3) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star-half-o")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-o")
+                } else if (element.score >= 2) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-o")
+                } else if (element.score >= 1) {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star-half-o")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-o")
+                } else {
+                    $lis.eq(0).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(1).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(2).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(3).find('i').attr("class", "fa fa-star-o")
+                    $lis.eq(4).find('i').attr("class", "fa fa-star-o")
+                }
+            })
+        } else {
+            alert(resp.errmsg);
+        }
+    })
 })
