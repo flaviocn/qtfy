@@ -2,6 +2,12 @@
  * Created by zhulingyun on 2017/12/12.
  */
 
+function getCookie(name) {
+    // 根据name提取对应的cookie值
+    var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+    return r ? r[1] : undefined;
+}
+
 // 解析提取url中的查询字符串参数
 function decodeQuery() {
     var search = decodeURI(document.location.search);
@@ -19,7 +25,7 @@ $(function () {
     var num = queryData["num"];
 
     // 获取电视剧信息
-    $.get("/api/v1_0/tvshow", {"id": id, "num":num}, function (resp) {
+    $.get("/api/v1_0/tvshow", {"id": id, "num": num}, function (resp) {
         if (resp.errno == 0) {
             // 前端内容填充
             $("video").attr("src", resp.tv_url)
@@ -32,10 +38,10 @@ $(function () {
             var html = $(".blog-pagenat-wthree ul").html()
             var cur_html = $('<li><a style="color: #02cba9" href="#">1</a></li>')
             $(".blog-pagenat-wthree ul").empty()
-            for (var i = 1;i <= resp.tv_nums.length; i++){
-                if (i == resp.tv_num){
+            for (var i = 1; i <= resp.tv_nums.length; i++) {
+                if (i == resp.tv_num) {
                     $(".blog-pagenat-wthree ul").append(cur_html)
-                } else{
+                } else {
                     $(".blog-pagenat-wthree ul").append(html)
                 }
             }
@@ -43,7 +49,7 @@ $(function () {
             $lis = $(".blog-pagenat-wthree ul li")
             $.each(resp.tv_nums, function (index, element) {
                 $lis.eq(index).find("a").html(element)
-                $lis.eq(index).find("a").attr("href", "tvshow.html?id="+id+"&num="+element)
+                $lis.eq(index).find("a").attr("href", "tvshow.html?id=" + id + "&num=" + element)
             })
 
             // 评分
@@ -121,59 +127,54 @@ $(function () {
         }
     })
 
-    // 获取院线电影列表信息
-    // $.get("/api/v1_0/theatrical_film_list", function (resp) {
-    //     if (resp.errno == 0) {
-    //         //前端页面填充N个div
-    //         var html = $(".w3ls-recent-grids").html()
-    //         for (i = 1; i < resp.films.length; i++) {
-    //             $(".w3ls-recent-grids").append(html)
-    //         }
-    //         $.each(resp.films, function (index, element) {
-    //             $(".w3l-recent-grid").eq(index).find("a").attr("href", "theatrical_film.html?id=" + element.id);
-    //             $(".w3l-recent-grid").eq(index).find("img.film").attr("src", element.default_image);
-    //             $(".w3l-recent-grid").eq(index).find("a.film").html(element.name);
-    //             $(".w3l-recent-grid").eq(index).find("p.film").html(element.profile);
-    //             $(".w3l-recent-grid").eq(index).find("li.film").html(element.premiere);
-    //         })
-    //     } else {
-    //         alert(resp.errmsg);
-    //     }
-    // })
+    // 获取院线评论信息
+    $.get("/api/v1_0/tvshow_comments", {"id": id}, function (resp) {
+        if (resp.errno == 0) {
+            //前端页面填充N个div
+            var html = $("#comments").html()
+            for (i = 1; i < resp.comments.length; i++) {
+                $("#comments").append(html)
+            }
 
-    // 获取电视剧评论信息
-    // $.get("/api/v1_0/theatrical_film_comments", {"id": id}, function (resp) {
-    //     if (resp.errno == 0) {
-    //         //前端页面填充N个div
-    //         var html = $("#comments").html()
-    //         for (i = 1; i < resp.comments.length; i++) {
-    //             $("#comments").append(html)
-    //         }
-    //
-    //         // 前端内容填充
-    //         $.each(resp.comments, function (index, element) {
-    //             $(".response-info").eq(index).find("h6").html(element.user_name)
-    //             $(".response-info").eq(index).find("p").html(element.comment)
-    //             $(".response-info").eq(index).find("li").html(element.date_time)
-    //         })
-    //     } else {
-    //         alert(resp.errmsg)
-    //     }
-    // })
+            // 前端内容填充
+            $.each(resp.comments, function (index, element) {
+                $(".response-info").eq(index).find("h6").html(element.user_name)
+                $(".response-info").eq(index).find("p").html(element.comment)
+                $(".response-info").eq(index).find("li").html(element.date_time)
+            })
+        } else {
+            alert(resp.errmsg)
+        }
+    })
 
     // 提交评论
-    // $("#resp").submit(function (e) {
-    //     // 阻止表单的默认行为
-    //     e.preventDefault();
-    //
-    //     var comment = $("#comment").val()
-    //     $.post("/api/v1_0/theatrical_film_comments", {"id": id, "comment": comment}, function (resp) {
-    //         if (resp.errno == 0) {
-    //             location.reload()
-    //         } else {
-    //             alert(resp.errmsg)
-    //         }
-    //     })
-    // })
+    $("#resp").submit(function (e) {
+        // 阻止表单的默认行为
+        e.preventDefault();
+
+        var comment = $("#comment").val()
+
+        // 向后端发送请求，提交用户的注册信息
+        var req_data = {
+            id: id,
+            comment: comment
+        };
+        $.ajax({
+            url: "/api/v1_0/tvshow_comments", // 请求路径url
+            type: "post", // 请求方式
+            data: req_data, // 发送的请求体数据
+            dataType: "json", // 指明从后端收到的数据是json格式的
+            headers: {
+                "X-CSRFToken": getCookie("csrf_token")
+            },  // 自定义的请求头
+            success: function (resp) {
+                if (resp.errno == 0) {
+                    location.reload()
+                } else {
+                    alert(resp.errmsg)
+                }
+            }
+        })
+    })
 })
 

@@ -142,3 +142,28 @@ class TvShowNum(BaseModel, db.Model):
 
     def get_real_url(self):
         return constants.QINIU_URL_DOMAIN + self.url
+
+class TvShowComment(BaseModel, db.Model):
+    """院线电影评论"""
+
+    __tablename__ = "tv_shows_comment"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_name = db.Column(db.String(32), nullable=False)
+    comment = db.Column(db.String(128), nullable=False)
+    tv_show_id = db.Column(db.Integer, db.ForeignKey("tv_shows.id"), nullable=False)  # 电视剧id
+
+    def get_date_time(self, date_time):
+        return date_time.strftime("%Y-%m-%d %H:%M:%S")
+
+    def to_dict(self):
+        """自定义的方法，将对象转换为字典"""
+
+        film_dict = {
+            "id": self.id,
+            "user_name": self.user_name,
+            "comment": self.comment,
+            "date_time": self.get_date_time(self.create_time)
+        }
+        return film_dict
+
