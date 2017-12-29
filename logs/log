@@ -616,3 +616,6 @@ ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
 ERROR variety.py:159 coercing to Unicode: need string or buffer, int found
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:59 (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+ERROR variety.py:50 (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
