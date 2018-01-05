@@ -136,6 +136,9 @@ class TvShowDetail(Resource):
                 logging.error(e)
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
+            if not tv:
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+
             # 3. 需要对数据转JSON
             tv_dict = tv.to_dict()
 
@@ -159,6 +162,9 @@ class TvShowDetail(Resource):
                 logging.error(e)
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
+            if not tv:
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+
             tv_url = tv.get_real_url()
 
             # 4. 保存redis中
@@ -175,6 +181,9 @@ class TvShowDetail(Resource):
                 tv_nums = TvShowNum.query.filter_by(tv_id=id).order_by(TvShowNum.num.asc()).all()
             except Exception as e:
                 logging.error(e)
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+
+            if not tv_nums:
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             tv_num_list = []

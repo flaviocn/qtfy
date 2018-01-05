@@ -253,3 +253,26 @@ class News(BaseModel, db.Model):
             "default_image": constants.QINIU_URL_DOMAIN + self.default_image
         }
         return new_dict
+
+class Message(BaseModel, db.Model):
+    """留言"""
+
+    __tablename__ = "message"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_name = db.Column(db.String(32), nullable=False)
+    message = db.Column(db.String(128), nullable=False)
+
+    def get_date_time(self, date_time):
+        return date_time.strftime("%Y-%m-%d %H:%M:%S")
+
+    def to_dict(self):
+        """自定义的方法，将对象转换为字典"""
+
+        mess_dict = {
+            "id": self.id,
+            "user_name": self.user_name,
+            "comment": self.message,
+            "date_time": self.get_date_time(self.create_time)
+        }
+        return mess_dict

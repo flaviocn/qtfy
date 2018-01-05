@@ -126,6 +126,9 @@ class VarietyDetail(Resource):
                 logging.error(e)
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
+            if not variety:
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+
             # 3. 需要对数据转JSON
             variety_dict = variety.to_dict()
 
@@ -149,6 +152,9 @@ class VarietyDetail(Resource):
                 logging.error(e)
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
+            if not variety_url:
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+
             variety_url = variety.get_real_url()
 
             # 4. 保存redis中
@@ -165,6 +171,9 @@ class VarietyDetail(Resource):
                 variety_nums = VarietyNum.query.filter_by(variety_id=id).order_by(VarietyNum.num.asc()).all()
             except Exception as e:
                 logging.error(e)
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+
+            if not variety_nums:
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             variety_num_list = []
