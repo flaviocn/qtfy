@@ -234,3 +234,22 @@ class VarietyComment(BaseModel, db.Model):
         }
         return film_dict
 
+class News(BaseModel, db.Model):
+    """新闻"""
+
+    __tablename__ = "news"
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(32), nullable=False) # 标题
+    content = db.Column(db.Text(8192), nullable=False) # 内容
+    default_image = db.Column(db.String(128), nullable=False) # 图片
+
+    def to_dict(self):
+        new_dict = {
+            "id": self.id,
+            "title": self.title,
+            "profile": self.content[:200],
+            "content": self.content,
+            "default_image": constants.QINIU_URL_DOMAIN + self.default_image
+        }
+        return new_dict

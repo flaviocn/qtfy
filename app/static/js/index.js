@@ -16,6 +16,7 @@ $(function () {
             $("#owl-demo .item").eq(index).find("img.film").attr("src", element.default_image);
             $("#owl-demo .item").eq(index).find("a.film").html(element.name);
             $("#owl-demo .item").eq(index).find("p.film").html(element.premiere);
+
             //评分
             var $lis = $("#owl-demo .item").eq(index).find("ul.w3l-ratings li")
             if (element.score >= 10) {
