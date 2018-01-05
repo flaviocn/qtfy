@@ -117,7 +117,7 @@ $(document).ready(function() {
             },
             success: function (data) {
                 if (data.errno == 0) {
-                    // 登录成功，跳转到主页
+                    // 登录成功
                     location.reload();
                     return;
                 }
@@ -141,7 +141,7 @@ $(document).ready(function() {
             dataType: "json",
             success: function (resp) {
                 if (resp.errno == 0) {
-                    location.href = "/";
+                    location.reload();
                 }
             }
         });
