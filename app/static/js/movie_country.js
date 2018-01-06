@@ -20,10 +20,11 @@ function get_content(page,size) {
     var queryData = decodeQuery();
     var page = arguments[0] ? arguments[0] : queryData["page"];
     var size = arguments[1] ? arguments[1] : queryData["size"];
-    var type = queryData["type"];
+
+    var country = queryData["country"]
 
     // 获取电视剧信息
-    $.get("/api/v1_0/movie_type", {"type": type, "page": page, "size": size}, function (resp) {
+    $.get("/api/v1_0/movie_country", {"country": country, "page": page, "size": size}, function (resp) {
         if (resp.errno == 0) {
             // 前端内容填充
             $("#tv_demo").empty()
