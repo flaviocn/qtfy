@@ -127,7 +127,7 @@ class VarietyDetail(Resource):
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             if not variety:
-                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询为空")
 
             # 3. 需要对数据转JSON
             variety_dict = variety.to_dict()
@@ -152,8 +152,8 @@ class VarietyDetail(Resource):
                 logging.error(e)
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
-            if not variety_url:
-                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+            if not variety:
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询为空")
 
             variety_url = variety.get_real_url()
 
@@ -174,7 +174,7 @@ class VarietyDetail(Resource):
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             if not variety_nums:
-                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询为空")
 
             variety_num_list = []
             for variety_num in variety_nums:

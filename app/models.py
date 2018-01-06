@@ -43,6 +43,40 @@ class User(BaseModel, db.Model):
     def check_password(self, value):
         return check_password_hash(self.password_hash, value)
 
+class Movie(BaseModel, db.Model):
+    """电影"""
+
+    __tablename__ = "movies"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32), nullable=False)
+    profile = db.Column(db.String(128), nullable=False) # 简介
+    country = db.Column(db.SmallInteger, nullable=False) # 国家
+    type = db.Column(db.SmallInteger, nullable=False) # 类型
+    actor = db.Column(db.String(32), nullable=False)
+    premiere = db.Column(db.Date, nullable=False) # 上映时间
+    default_image = db.Column(db.String(128), nullable=False)
+    score = db.Column(db.Float, nullable=False)
+    is_delete = db.Column(db.Boolean, default=False)
+
+    def get_date(self):
+        return self.premiere.strftime("%Y-%m-%d")
+
+    def to_dict(self):
+        """自定义的方法，将对象转换为字典"""
+
+        movie_dict = {
+            "id": self.id,
+            "name": self.name,
+            "profile": self.profile,
+            "premiere": self.get_date(),
+            "year": self.get_date()[:4],
+            "actor": self.actor,
+            "default_image": constants.QINIU_URL_DOMAIN + self.default_image,
+            "score": self.score,
+        }
+        return movie_dict
+
 class TheatricalFilm(BaseModel, db.Model):
     """院线电影"""
 
@@ -276,3 +310,26 @@ class Message(BaseModel, db.Model):
             "date_time": self.get_date_time(self.create_time)
         }
         return mess_dict
+
+movie_type = {
+    '爱情':1,
+    '喜剧':2,
+    '动作':3,
+    '剧情':4,
+    '科幻':5,
+    '恐怖':6,
+    '动画':7,
+    '惊悚':8,
+    '犯罪':9
+}
+
+movie_country = {
+    '大陆': 1,
+    '香港': 2,
+    '台湾': 3,
+    '美国': 4,
+    '韩国': 5,
+    '日本': 6,
+    '泰国': 7,
+    '其他': 8
+}

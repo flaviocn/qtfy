@@ -137,7 +137,7 @@ class TvShowDetail(Resource):
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             if not tv:
-                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询为空")
 
             # 3. 需要对数据转JSON
             tv_dict = tv.to_dict()
@@ -163,7 +163,7 @@ class TvShowDetail(Resource):
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             if not tv:
-                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询为空")
 
             tv_url = tv.get_real_url()
 
@@ -184,7 +184,7 @@ class TvShowDetail(Resource):
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
 
             if not tv_nums:
-                return jsonify(errno=RET.DBERR, errmsg="数据库查询错误")
+                return jsonify(errno=RET.DBERR, errmsg="数据库查询为空")
 
             tv_num_list = []
             for tv_num in tv_nums:
