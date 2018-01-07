@@ -11,6 +11,7 @@ $(function () {
             $.each(resp.movie_recommend, function (index, element) {
 
                 if (index == 0) {
+                    $('.tab1').find('.video_agile_player').find("a").attr("href", "movie.html?id=" + element.id);
                     $('.tab1').find('.video_agile_player').find("img").attr("src", element.default_image);
                     $('.tab1').find('.video_agile_player').find("p.fexi_header").html(element.name);
                     $('.tab1').find(".fexi_header").html(element.name)
@@ -90,7 +91,7 @@ $(function () {
                     return;
                 }
 
-                // $('.tab1 .w3l-movie-gride-agile').eq(index).find("a").attr("href", "theatrical_film.html?id=" + element.id);
+                $('.tab1 .w3l-movie-gride-agile').eq(index-1).find("a").attr("href", "movie.html?id=" + element.id);
 
                 $('.tab1 .w3l-movie-gride-agile').eq(index-1).find("img.movie").attr("src", element.default_image);
                 $('.tab1 .w3l-movie-gride-agile').eq(index-1).find("a.movie").html(element.name);
@@ -171,6 +172,7 @@ $(function () {
             $.each(resp.movie_new, function (index, element) {
 
                 if (index == 0) {
+                    $('.tab2').find('.video_agile_player').find("a").attr("href", "movie.html?id=" + element.id);
                     $('.tab2').find('.video_agile_player').find("img").attr("src", element.default_image);
                     $('.tab2').find('.video_agile_player').find("p.fexi_header").html(element.name);
                     $('.tab2').find(".fexi_header").html(element.name)
@@ -250,7 +252,7 @@ $(function () {
                     return;
                 }
 
-                // $('.tab1 .w3l-movie-gride-agile').eq(index).find("a").attr("href", "theatrical_film.html?id=" + element.id);
+                $('.tab2 .w3l-movie-gride-agile').eq(index-1).find("a").attr("href", "movie.html?id=" + element.id);
 
                 $('.tab2 .w3l-movie-gride-agile').eq(index-1).find("img.movie").attr("src", element.default_image);
                 $('.tab2 .w3l-movie-gride-agile').eq(index-1).find("a.movie").html(element.name);
@@ -331,6 +333,7 @@ $(function () {
             $.each(resp.movie_score, function (index, element) {
 
                 if (index == 0) {
+                    $('.tab3').find('.video_agile_player').find("a").attr("href", "movie.html?id=" + element.id);
                     $('.tab3').find('.video_agile_player').find("img").attr("src", element.default_image);
                     $('.tab3').find('.video_agile_player').find("p.fexi_header").html(element.name);
                     $('.tab3').find(".fexi_header").html(element.name)
@@ -410,7 +413,7 @@ $(function () {
                     return;
                 }
 
-                // $('.tab1 .w3l-movie-gride-agile').eq(index).find("a").attr("href", "theatrical_film.html?id=" + element.id);
+                $('.tab3 .w3l-movie-gride-agile').eq(index-1).find("a").attr("href", "movie.html?id=" + element.id);
 
                 $('.tab3 .w3l-movie-gride-agile').eq(index-1).find("img.movie").attr("src", element.default_image);
                 $('.tab3 .w3l-movie-gride-agile').eq(index-1).find("a.movie").html(element.name);

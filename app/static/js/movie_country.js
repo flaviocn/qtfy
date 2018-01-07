@@ -66,7 +66,7 @@ function get_content(page,size) {
             }
 
             $.each(resp.movies, function (index, element) {
-                $(".requested-movies").eq(index).find("a").attr("href", "variety.html?id="+element.id)
+                $(".requested-movies").eq(index).find("a").attr("href", "movie.html?id="+element.id)
                 $(".requested-movies").eq(index).find("img.tv").attr("src", element.default_image)
                 $(".requested-movies").eq(index).find("a.tv").html(element.name)
                 $(".requested-movies").eq(index).find("p.tv").html(element.premiere)

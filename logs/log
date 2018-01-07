@@ -736,3 +736,18 @@ WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:175 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR movie.py:184 (_mysql_exceptions.OperationalError) (1054, "Unknown column 'movies.url' in 'field list'") [SQL: u'SELECT movies.create_time AS movies_create_time, movies.update_time AS movies_update_time, movies.id AS movies_id, movies.name AS movies_name, movies.profile AS movies_profile, movies.country AS movies_country, movies.type AS movies_type, movies.actor AS movies_actor, movies.premiere AS movies_premiere, movies.default_image AS movies_default_image, movies.url AS movies_url, movies.score AS movies_score, movies.is_delete AS movies_is_delete \nFROM movies \nWHERE movies.type = %s ORDER BY movies.update_time DESC \n LIMIT %s, %s'] [parameters: ('1', 0, 10)]
+ERROR movie.py:184 (_mysql_exceptions.OperationalError) (1054, "Unknown column 'movies.url' in 'field list'") [SQL: u'SELECT movies.create_time AS movies_create_time, movies.update_time AS movies_update_time, movies.id AS movies_id, movies.name AS movies_name, movies.profile AS movies_profile, movies.country AS movies_country, movies.type AS movies_type, movies.actor AS movies_actor, movies.premiere AS movies_premiere, movies.default_image AS movies_default_image, movies.url AS movies_url, movies.score AS movies_score, movies.is_delete AS movies_is_delete \nFROM movies \nWHERE movies.type = %s ORDER BY movies.update_time DESC \n LIMIT %s, %s'] [parameters: ('1', 0, 10)]
+ERROR movie.py:184 (_mysql_exceptions.OperationalError) (1054, "Unknown column 'movies.url' in 'field list'") [SQL: u'SELECT movies.create_time AS movies_create_time, movies.update_time AS movies_update_time, movies.id AS movies_id, movies.name AS movies_name, movies.profile AS movies_profile, movies.country AS movies_country, movies.type AS movies_type, movies.actor AS movies_actor, movies.premiere AS movies_premiere, movies.default_image AS movies_default_image, movies.url AS movies_url, movies.score AS movies_score, movies.is_delete AS movies_is_delete \nFROM movies \nWHERE movies.type = %s ORDER BY movies.update_time DESC \n LIMIT %s, %s'] [parameters: ('5', 0, 10)]
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!

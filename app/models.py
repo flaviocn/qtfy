@@ -56,6 +56,7 @@ class Movie(BaseModel, db.Model):
     actor = db.Column(db.String(32), nullable=False)
     premiere = db.Column(db.Date, nullable=False) # 上映时间
     default_image = db.Column(db.String(128), nullable=False)
+    url = db.Column(db.String(128), nullable=False)
     score = db.Column(db.Float, nullable=False)
     is_delete = db.Column(db.Boolean, default=False)
 
@@ -74,6 +75,31 @@ class Movie(BaseModel, db.Model):
             "actor": self.actor,
             "default_image": constants.QINIU_URL_DOMAIN + self.default_image,
             "score": self.score,
+            "url": constants.QINIU_URL_DOMAIN + self.url,
+        }
+        return movie_dict
+
+class MovieComment(BaseModel, db.Model):
+    """电影评论"""
+
+    __tablename__ = "movies_comment"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_name = db.Column(db.String(32), nullable=False)
+    comment = db.Column(db.String(128), nullable=False)
+    movie_id = db.Column(db.Integer, db.ForeignKey("movies.id"), nullable=False)  # 院线电影id
+
+    def get_date_time(self, date_time):
+        return date_time.strftime("%Y-%m-%d %H:%M:%S")
+
+    def to_dict(self):
+        """自定义的方法，将对象转换为字典"""
+
+        movie_dict = {
+            "id": self.id,
+            "user_name": self.user_name,
+            "comment": self.comment,
+            "date_time": self.get_date_time(self.create_time)
         }
         return movie_dict
 
