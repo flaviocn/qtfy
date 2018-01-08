@@ -18,8 +18,20 @@ var li_html = ""
 function get_content(type,page,size) {
     // 获取详情页面要展示的电影id
     var queryData = decodeQuery();
+
+    var type = typeof(arguments[0])!="undefined" ? arguments[0] : queryData["type"];
     var page = arguments[1] ? arguments[1] : queryData["page"];
     var size = arguments[2] ? arguments[2] : queryData["size"];
+
+    if(type == '0'){
+        $('.resp-tabs-list li').eq(0).addClass('resp-tab-active').siblings().removeClass('resp-tab-active')
+    }else if(type == '1'){
+        $('.resp-tabs-list li').eq(1).addClass('resp-tab-active').siblings().removeClass('resp-tab-active')
+    }else if(type == '2'){
+        $('.resp-tabs-list li').eq(2).addClass('resp-tab-active').siblings().removeClass('resp-tab-active')
+    }else if(type == '3'){
+        $('.resp-tabs-list li').eq(3).addClass('resp-tab-active').siblings().removeClass('resp-tab-active')
+    }
 
     // 获取电视剧信息
     $.get("/api/v1_0/tvshow_list", {"type": type, "page": page, "size": size}, function (resp) {
@@ -148,5 +160,12 @@ function get_content(type,page,size) {
 $(function () {
     html = $("#tv_demo").html()
     li_html = $("#nums").html()
-    get_content(0,1,10);
+
+    var queryData = decodeQuery();
+
+    if(typeof(queryData["page"])=="undefined"){
+        get_content(0,1,10);
+    }else {
+        get_content();
+    }
 })

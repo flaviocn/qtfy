@@ -148,5 +148,12 @@ function get_content(page,size) {
 $(function () {
     html = $("#tv_demo").html()
     li_html = $("#nums").html()
-    get_content(1,10);
+
+    var queryData = decodeQuery();
+
+    if(typeof(queryData["page"])=="undefined"){
+        get_content(1,10);
+    }else {
+        get_content();
+    }
 })

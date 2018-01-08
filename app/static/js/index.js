@@ -688,7 +688,7 @@ $(function () {
             }
 
             $.each(resp.varietys, function (index, element) {
-                $(".variety .requested-movies").eq(index).find("a").attr("href", "tvshow.html?id=" + element.id)
+                $(".variety .requested-movies").eq(index).find("a").attr("href", "variety.html?id=" + element.id)
                 $(".variety .requested-movies").eq(index).find("img.varietys").attr("src", element.default_image)
                 $(".variety .requested-movies").eq(index).find("a.varietys").html(element.name)
                 $(".variety .requested-movies").eq(index).find("p.varietys").html(element.premiere)

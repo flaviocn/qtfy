@@ -35,7 +35,7 @@ class MovieList(Resource):
         # 2. 没有缓存, 查询MySQL
         if not movie_recommend_json:
             # 查询MySQL所有的数据
-            movie_recommend_list = Movie.query.order_by(Movie.update_time.desc()).all()[:20]
+            movie_recommend_list = Movie.query.order_by(Movie.update_time.desc()).all()[:9]
 
             if len(movie_recommend_list) <= 0:
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询为空")
@@ -73,7 +73,7 @@ class MovieList(Resource):
         # 2. 没有缓存, 查询MySQL
         if not movie_new_json:
             # 查询MySQL所有的数据
-            movie_new_list = Movie.query.order_by(Movie.premiere.desc()).all()[:20]
+            movie_new_list = Movie.query.order_by(Movie.premiere.desc()).all()[:9]
 
             if len(movie_new_list) <= 0:
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询为空")
@@ -111,7 +111,7 @@ class MovieList(Resource):
         # 2. 没有缓存, 查询MySQL
         if not movie_score_json:
             # 查询MySQL所有的数据
-            movie_score_list = Movie.query.order_by(Movie.score.desc()).all()[:20]
+            movie_score_list = Movie.query.order_by(Movie.score.desc()).all()[:9]
 
             if len(movie_score_list) <= 0:
                 return jsonify(errno=RET.DBERR, errmsg="数据库查询为空")

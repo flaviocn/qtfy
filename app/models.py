@@ -235,7 +235,6 @@ class Variety(BaseModel, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(32), nullable=False)
     profile = db.Column(db.String(128), nullable=False) # 简介
-    type = db.Column(db.SmallInteger, nullable=False) # 类型
     actor = db.Column(db.String(32), nullable=False)
     premiere = db.Column(db.Date, nullable=False) # 首播
     default_image = db.Column(db.String(128), nullable=False)
@@ -336,6 +335,12 @@ class Message(BaseModel, db.Model):
             "date_time": self.get_date_time(self.create_time)
         }
         return mess_dict
+
+tv_show_type = {
+    '国产':1,
+    '英美':2,
+    '日韩':3,
+}
 
 movie_type = {
     '爱情':1,
