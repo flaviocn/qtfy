@@ -789,3 +789,65 @@ ERROR variety.py:165 coercing to Unicode: need string or buffer, int found
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
 WARNING _internal.py:87  * Debugger is active!
+ERROR variety.py:110 coercing to Unicode: need string or buffer, int found
+ERROR variety.py:165 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:175 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:175 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:175 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:175 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:120 coercing to Unicode: need string or buffer, int found
+ERROR tvshow.py:175 coercing to Unicode: need string or buffer, int found
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR _internal.py:87 Error on request:
+Traceback (most recent call last):
+  File "/Users/chunhua/.virtualenvs/flask/lib/python2.7/site-packages/werkzeug/serving.py", line 209, in run_wsgi
+    execute(self.server.app)
+  File "/Users/chunhua/.virtualenvs/flask/lib/python2.7/site-packages/werkzeug/serving.py", line 200, in execute
+    write(data)
+  File "/Users/chunhua/.virtualenvs/flask/lib/python2.7/site-packages/werkzeug/serving.py", line 177, in write
+    self.send_header('Date', self.date_time_string())
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/BaseHTTPServer.py", line 401, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+ERROR variety.py:50 (_mysql_exceptions.OperationalError) (1054, "Unknown column 'varietys.type' in 'field list'") [SQL: u'SELECT varietys.create_time AS varietys_create_time, varietys.update_time AS varietys_update_time, varietys.id AS varietys_id, varietys.name AS varietys_name, varietys.profile AS varietys_profile, varietys.type AS varietys_type, varietys.actor AS varietys_actor, varietys.premiere AS varietys_premiere, varietys.default_image AS varietys_default_image, varietys.score AS varietys_score, varietys.is_delete AS varietys_is_delete \nFROM varietys ORDER BY varietys.create_time DESC \n LIMIT %s, %s'] [parameters: (0, 10)]
+ERROR variety.py:50 (_mysql_exceptions.OperationalError) (1054, "Unknown column 'varietys.type' in 'field list'") [SQL: u'SELECT varietys.create_time AS varietys_create_time, varietys.update_time AS varietys_update_time, varietys.id AS varietys_id, varietys.name AS varietys_name, varietys.profile AS varietys_profile, varietys.type AS varietys_type, varietys.actor AS varietys_actor, varietys.premiere AS varietys_premiere, varietys.default_image AS varietys_default_image, varietys.score AS varietys_score, varietys.is_delete AS varietys_is_delete \nFROM varietys ORDER BY varietys.create_time DESC \n LIMIT %s, %s'] [parameters: (0, 10)]
+ERROR variety.py:50 (_mysql_exceptions.OperationalError) (1054, "Unknown column 'varietys.type' in 'field list'") [SQL: u'SELECT varietys.create_time AS varietys_create_time, varietys.update_time AS varietys_update_time, varietys.id AS varietys_id, varietys.name AS varietys_name, varietys.profile AS varietys_profile, varietys.type AS varietys_type, varietys.actor AS varietys_actor, varietys.premiere AS varietys_premiere, varietys.default_image AS varietys_default_image, varietys.score AS varietys_score, varietys.is_delete AS varietys_is_delete \nFROM varietys ORDER BY varietys.create_time DESC \n LIMIT %s, %s'] [parameters: (0, 10)]
+ERROR variety.py:50 (_mysql_exceptions.OperationalError) (1054, "Unknown column 'varietys.type' in 'field list'") [SQL: u'SELECT varietys.create_time AS varietys_create_time, varietys.update_time AS varietys_update_time, varietys.id AS varietys_id, varietys.name AS varietys_name, varietys.profile AS varietys_profile, varietys.type AS varietys_type, varietys.actor AS varietys_actor, varietys.premiere AS varietys_premiere, varietys.default_image AS varietys_default_image, varietys.score AS varietys_score, varietys.is_delete AS varietys_is_delete \nFROM varietys ORDER BY varietys.create_time DESC \n LIMIT %s, %s'] [parameters: (0, 10)]
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
+WARNING _internal.py:87  * Debugger is active!
